@@ -6,12 +6,21 @@ from tensorflow.keras.models import Model
 from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2, preprocess_input
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+import gdown
+import os
 
 # Load MobileNetV2 model
 mobilenet_model = MobileNetV2(weights="imagenet")
 mobilenet_model = Model(inputs=mobilenet_model.inputs, outputs=mobilenet_model.layers[-2].output)
 
 # Load your trained model
+
+
+# Download model if not already present
+if not os.path.exists("model6.h5"):
+    url = "https://drive.google.com/file/d/10T13MDfL08RsTYM2x4Eka8Yotjp-_tEW/view?usp=drive_link"  # Replace with actual file ID
+    gdown.download(url, "model6.h5", quiet=False)
+
 model = tf.keras.models.load_model('model6.h5')
 
 # Load the tokenizer
