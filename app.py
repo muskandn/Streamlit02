@@ -22,7 +22,7 @@ if not os.path.exists("model6.h5"):
     url = "https://drive.google.com/uc?id=10T13MDfL08RsTYM2x4Eka8Yotjp-_tEW"
     gdown.download(url, "model6.h5", quiet=False)
 
-#adding extra
+#adding extra for loading the model from the drive
 #---------------------------------------------------------------------------------------
 if os.path.exists("model6.h5"):
     print("Model file exists")
