@@ -30,13 +30,13 @@ else:
     print("Model file does not exist")
 
 
-try:
-    model = tf.keras.models.load_model('model6.h5')
-    print("Model loaded successfully")
-except Exception as e:
-    print("Error loading model:", e)
+# try:
+#     model = tf.keras.models.load_model('model6.h5')
+#     print("Model loaded successfully")
+# except Exception as e:
+#     print("Error loading model:", e)
 
-
+model = tf.keras.models.load_model('model6.h5')
 #------------------------------------------------------------------------------------
 # model = tf.keras.models.load_model('model6.h5')
 
