@@ -18,10 +18,27 @@ mobilenet_model = Model(inputs=mobilenet_model.inputs, outputs=mobilenet_model.l
 
 # Download model if not already present
 if not os.path.exists("model6.h5"):
-    url = "https://drive.google.com/file/d/10T13MDfL08RsTYM2x4Eka8Yotjp-_tEW/view?usp=drive_link"  # Replace with actual file ID
+    # url = "https://drive.google.com/file/d/10T13MDfL08RsTYM2x4Eka8Yotjp-_tEW/view?usp=drive_link"  
+    url = "https://drive.google.com/uc?id=10T13MDfL08RsTYM2x4Eka8Yotjp-_tEW"
     gdown.download(url, "model6.h5", quiet=False)
 
-model = tf.keras.models.load_model('model6.h5')
+#adding extra
+#---------------------------------------------------------------------------------------
+if os.path.exists("model6.h5"):
+    print("Model file exists")
+else:
+    print("Model file does not exist")
+
+
+try:
+    model = tf.keras.models.load_model('model6.h5')
+    print("Model loaded successfully")
+except Exception as e:
+    print("Error loading model:", e)
+
+
+#------------------------------------------------------------------------------------
+# model = tf.keras.models.load_model('model6.h5')
 
 # Load the tokenizer
 with open('tokenizer.pkl', 'rb') as tokenizer_file:
