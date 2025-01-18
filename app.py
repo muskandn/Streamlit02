@@ -13,14 +13,13 @@ import os
 mobilenet_model = MobileNetV2(weights="imagenet")
 mobilenet_model = Model(inputs=mobilenet_model.inputs, outputs=mobilenet_model.layers[-2].output)
 
-# Load your trained model
-
-
 # Download model if not already present
 if not os.path.exists("model6.h5"):
     # url = "https://drive.google.com/file/d/10T13MDfL08RsTYM2x4Eka8Yotjp-_tEW/view?usp=drive_link"  
     url = "https://drive.google.com/uc?id=10T13MDfL08RsTYM2x4Eka8Yotjp-_tEW"
     gdown.download(url, "model6.h5", quiet=False)
+
+
 
 #adding extra for loading the model from the drive
 #---------------------------------------------------------------------------------------
@@ -38,6 +37,7 @@ except Exception as e:
 
 
 #------------------------------------------------------------------------------------
+#original
 # model = tf.keras.models.load_model('model6.h5')
 
 # Load the tokenizer
